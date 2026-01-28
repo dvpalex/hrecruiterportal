@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "differentials": "Diferenciais",
+    "contact": "Contato"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "description": "Talent Acquisition - Conectando talentos à essência da sua empresa",
+    "quickLinks": "Links Rápidos",
+    "contactInfo": "Contato",
+    "terms": "Termos de Uso",
+    "privacy": "Política de Privacidade"
+  },
+  "cta": {
+    "contactUs": "Fale com um Especialista",
+    "learnMore": "Saiba mais",
+    "getStarted": "Começar",
+    "viewServices": "Conheça nossos serviços"
+  },
+  "contact": {
+    "title": "Vamos construir o seu time dos sonhos?",
+    "subtitle": "Estamos aqui para ajudar sua empresa a crescer com as pessoas certas.",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "company": "Empresa",
+    "message": "Mensagem",
+    "submit": "Enviar mensagem",
+    "success": "Obrigado por sua mensagem, em breve retornaremos o contato.",
+    "error": "Ocorreu um erro, por favor tente mais tarde."
+  },
+  "hero": {
+    "badge": "Talent Acquisition"
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções de Talent Acquisition para o sucesso do seu negócio"
+  },
+  "differentials": {
+    "title": "Por que escolher a HRecruiter?",
+    "subtitle": "Não entregamos apenas currículos, entregamos resultados."
+  }
+}

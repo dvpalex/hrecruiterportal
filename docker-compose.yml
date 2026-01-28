@@ -1,0 +1,37 @@
+services:
+  hrecruiter:
+    image: collabmo/cmshrecruiter:latest
+    restart: always
+    environment:
+      - CULTURE=pt-BR
+      - TZ=America/Sao_Paulo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - traefik_public
+    labels:
+      # Enable Traefik
+      - traefik.enable=true
+
+      # HTTP Router - Redirect to HTTPS
+      - traefik.http.routers.hrecruiter-http.rule=Host(`hrecruiter.com.br`) || Host(`www.hrecruiter.com.br`)
+      - traefik.http.routers.hrecruiter-http.entrypoints=web
+      - traefik.http.routers.hrecruiter-http.middlewares=hrecruiter-https-redirect
+
+      # HTTPS Redirect Middleware
+      - traefik.http.middlewares.hrecruiter-https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.hrecruiter-https-redirect.redirectscheme.permanent=true
+
+      # HTTPS Router
+      - traefik.http.routers.hrecruiter-https.rule=Host(`hrecruiter.com.br`) || Host(`www.hrecruiter.com.br`)
+      - traefik.http.routers.hrecruiter-https.entrypoints=websecure
+      - traefik.http.routers.hrecruiter-https.tls=true
+      - traefik.http.routers.hrecruiter-https.tls.certresolver=letsencrypt
+
+      # Service Port
+      - traefik.http.services.hrecruiter.loadbalancer.server.port=3000
+
+networks:
+  traefik_public:
+    external: true
